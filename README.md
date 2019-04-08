@@ -1453,7 +1453,7 @@ ggplot(long_assam, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "i
 
 ![](Figs/assam-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_assam, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise(average_seats = round(mean(seats))) %>% mutate(state = "Assam") %>% slice(which.max(average_seats))
 
@@ -1463,7 +1463,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Bihar
 -----
 
-``` r
+```r
 bihar <- read_clean(85,5)
 
 # Look at the data
@@ -1578,7 +1578,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_bihar <- make_long(bihar)
 
 ggplot(long_bihar, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(), width = 0.5) + facet_grid(Polling.agency ~ reorder(Date.published, rev(date))) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") + ggtitle("Bihar (40)")
@@ -1586,7 +1586,7 @@ ggplot(long_bihar, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "i
 
 ![](Figs/bihar-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_bihar, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise(average_seats = round(mean(seats))) %>% mutate(state = "Bihar") %>% slice(which.max(average_seats))
 
@@ -1596,7 +1596,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Chhattisgarh
 ------------
 
-``` r
+```r
 chhattisgarh <- read_clean(93,6)
 
 # Look at the data
@@ -1728,7 +1728,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_chhattisgarh <- make_long(chhattisgarh)
 
 ggplot(long_chhattisgarh, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(), width = 0.5) + facet_grid(Polling.agency ~ reorder(Date.published, rev(date)) ) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") + scale_y_continuous(breaks = seq(0,8,2))+ ggtitle("Chhattisgarh (11)")
@@ -1736,7 +1736,7 @@ ggplot(long_chhattisgarh, aes(x = party, y = seats, fill = party)) + geom_bar(st
 
 ![](Figs/chhattisgarh-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_chhattisgarh, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Chhattisgarh") %>% slice(which.max(average_seats))
 
@@ -1746,7 +1746,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Goa
 ---
 
-``` r
+```r
 goa <- read_clean(102,2)
 
 # Look at the data
@@ -1810,7 +1810,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_goa <- make_long(goa)
 
 ggplot(long_goa, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") + scale_y_continuous(breaks = seq(0,2,1)) +  ggtitle("Goa (2)")
@@ -1818,7 +1818,7 @@ ggplot(long_goa, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "ide
 
 ![](Figs/goa-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_goa, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Goa") %>% slice(which.max(average_seats))
 
@@ -1828,7 +1828,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Gujarat
 -------
 
-``` r
+```r
 gujarat <- read_clean(107,3)
 
 # Look at the data
@@ -1909,7 +1909,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_gujarat <- make_long(gujarat)
 
 ggplot(long_gujarat, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_grid(Polling.agency ~ reorder(Date.published, rev(date))) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") +  ggtitle("Gujarat (26)")
@@ -1917,7 +1917,7 @@ ggplot(long_gujarat, aes(x = party, y = seats, fill = party)) + geom_bar(stat = 
 
 ![](Figs/gujarat-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_gujarat, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Gujarat") %>% slice(which.max(average_seats))
 
@@ -1927,7 +1927,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Haryana
 -------
 
-``` r
+```r
 haryana <- read_clean(113,3)
 
 # Look at the data
@@ -2020,7 +2020,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_haryana <- make_long(haryana)
 
 ggplot(long_haryana, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#00FF00', '#FFA500', '#228B22'), name = "Party", labels = c("INLD","NDA", "UPA")) + labs(x = "", y = "Number of seats") + ggtitle("Haryana(10)")
@@ -2028,7 +2028,7 @@ ggplot(long_haryana, aes(x = party, y = seats, fill = party)) + geom_bar(stat = 
 
 ![](Figs/haryana-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_haryana, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Haryana") %>% slice(which.max(average_seats))
 
@@ -2041,7 +2041,7 @@ Himachal Pradesh
 Haryana
 -------
 
-``` r
+```r
 hp <- read_clean(119,2)
 
 # Look at the data
@@ -2105,7 +2105,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_hp <- make_long(hp)
 
 ggplot(long_hp, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") + ggtitle("Himachal Pradesh (4)")
@@ -2113,7 +2113,7 @@ ggplot(long_hp, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/hp-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_hp, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Himachal Pradesh") %>% slice(which.max(average_seats))
 
@@ -2123,7 +2123,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Jammu and Kashmir
 -----------------
 
-``` r
+```r
 jk <- read_clean(124,3)
 
 # Look at the data
@@ -2204,7 +2204,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_jk <- make_long(jk)
 
 ggplot(long_jk, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") +  ggtitle("Jammu and Kashmir (6)")
@@ -2212,7 +2212,7 @@ ggplot(long_jk, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/jk-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_jk, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Jammu & Kashmir") %>% slice(which.max(average_seats))
 
@@ -2222,7 +2222,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Jharkhand
 ---------
 
-``` r
+```r
 jharkhand <- read_clean(130,2)
 
 # Look at the data
@@ -2295,7 +2295,7 @@ VDPAssociates
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_jharkhand <- make_long(jharkhand)
 
 ggplot(long_jharkhand, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#FFD700','#FFA500', '#228B22'), name = "Party", labels = c("JVM","NDA", "UPA")) + labs(x = "", y = "Number of seats") +  ggtitle("Jharkhand (14)")
@@ -2303,7 +2303,7 @@ ggplot(long_jharkhand, aes(x = party, y = seats, fill = party)) + geom_bar(stat 
 
 ![](Figs/jharkhand-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_jharkhand, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Jharkhand") %>% slice(which.max(average_seats))
 
@@ -2313,7 +2313,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Karnataka
 ---------
 
-``` r
+```r
 karnataka <- read_clean(135,2)
 
 # Look at the data
@@ -2377,7 +2377,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_karnataka <- make_long(karnataka)
 
 ggplot(long_karnataka, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats") +  ggtitle("Karnataka (28)")
@@ -2385,7 +2385,7 @@ ggplot(long_karnataka, aes(x = party, y = seats, fill = party)) + geom_bar(stat 
 
 ![](Figs/karnataka-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_karnataka, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Karnataka") %>% slice(which.max(average_seats))
 
@@ -2395,7 +2395,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Kerala
 ------
 
-``` r
+```r
 kerala <- read_clean(140,6)
 
 # Look at the data
@@ -2548,7 +2548,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_kerala <- make_long(kerala)
 
 ggplot(long_kerala, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#DC143C','#FFA500', '#6B8E23'), name = "Party", labels = c("LDF","NDA", "UDF")) + labs(x = "", y = "Number of seats") +  ggtitle("Kerala (20)")
@@ -2556,7 +2556,7 @@ ggplot(long_kerala, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "
 
 ![](Figs/kerala-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_kerala, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Kerala") %>% slice(which.max(average_seats))
 
@@ -2566,7 +2566,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Madhya pradesh
 --------------
 
-``` r
+```r
 mp <- read_clean(149,7)
 
 # Look at the data
@@ -2715,7 +2715,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_mp <- make_long(mp)
 
 ggplot(long_mp, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats")  +  ggtitle("Madhya Pradesh (29)")
@@ -2723,7 +2723,7 @@ ggplot(long_mp, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/mp-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_mp, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Madhya Pradesh") %>% slice(which.max(average_seats))
 
@@ -2733,7 +2733,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Maharashtra
 -----------
 
-``` r
+```r
 maha <- read_clean(159,6)
 
 # Look at the data
@@ -2865,7 +2865,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_maha <- make_long(maha)
 
 ggplot(long_maha, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_grid(Polling.agency ~ reorder(Date.published, rev(date))) + scale_fill_manual(values = c('#FFA500', '#228B22'), name = "Party", labels = c("NDA", "UPA")) + labs(x = "", y = "Number of seats")  +  ggtitle("Maharashtra (48)")
@@ -2873,7 +2873,7 @@ ggplot(long_maha, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "id
 
 ![](Figs/maha-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_maha, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Maharashtra") %>% slice(which.max(average_seats))
 
@@ -2883,7 +2883,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 North East
 ----------
 
-``` r
+```r
 ne <- read_clean(168,21)
 ne <- ne[c(1,5,9,13,17,21),]
 ne$state <- c("Manipur", "Mizoram","Nagaland", "Sikkim", "Arunanchal Pradesh", "Tripura")
@@ -3058,7 +3058,7 @@ Tripura
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_ne <- gather(ne, key = "party", value = "seats", -c(Date.published, Polling.agency, state, Lead))
 long_ne$seats <- as.integer(long_ne$seats)
 
@@ -3067,7 +3067,7 @@ ggplot(long_ne, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/ne-1.png)
 
-``` r
+```r
 meanPoll <- data.frame(party = (c("NONE", "NDA","NDA","NDA","UPA","NDA")), average_seats = as.numeric(str_replace(ne$Lead,ne$Lead[1],"0")), state = ne$state, stringsAsFactors = F)
 
 meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
@@ -3076,7 +3076,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Odisha
 ------
 
-``` r
+```r
 odisha <- read_clean(192,4)
 
 # Look at the data
@@ -3189,7 +3189,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_odisha <- make_long(odisha)
 long_odisha$date <- parse_date_time(long_odisha$Date.published,orders = c("bdy", "bY"))
 
@@ -3198,7 +3198,7 @@ ggplot(long_odisha, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "
 
 ![](Figs/odisha-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_odisha, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Odisha") %>% slice(which.max(average_seats))
 
@@ -3208,7 +3208,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Punjab
 ------
 
-``` r
+```r
 punjab <- read_clean(199,5)
 
 # Look at the data
@@ -3341,7 +3341,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_punjab <- make_long(punjab)
 long_punjab$date <- parse_date_time(long_punjab$Date.published,orders = c("bdy", "bY"))
 
@@ -3350,7 +3350,7 @@ ggplot(long_punjab, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "
 
 ![](Figs/punjab-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_punjab, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Punjab") %>% slice(which.max(average_seats))
 
@@ -3360,7 +3360,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Rajashthan
 ----------
 
-``` r
+```r
 rajasthan <- read_clean(207,7)
 
 # Look at the data
@@ -3509,7 +3509,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_rajasthan <- make_long(rajasthan)
 long_rajasthan$date <- parse_date_time(long_rajasthan$Date.published,orders = c("bdy", "bY"))
 
@@ -3518,7 +3518,7 @@ ggplot(long_rajasthan, aes(x = party, y = seats, fill = party)) + geom_bar(stat 
 
 ![](Figs/rajasthan-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_rajasthan, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Rajasthan") %>% slice(which.max(average_seats))
 
@@ -3528,7 +3528,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Tamil Nadu
 ----------
 
-``` r
+```r
 tn <- read_clean(217,3)
 
 # Look at the data
@@ -3621,7 +3621,7 @@ IndiaTV-CNX
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_tn <- make_long(tn)
 long_tn$date <- parse_date_time(long_tn$Date.published,orders = c("bdy", "bY"))
 
@@ -3630,7 +3630,7 @@ ggplot(long_tn, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/tn-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_tn, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Tamil Nadu") %>% slice(which.max(average_seats))
 
@@ -3640,7 +3640,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Telangana
 ---------
 
-``` r
+```r
 telangana <- read_clean(223,4)
 
 # Look at the data
@@ -3768,7 +3768,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_telangana <- make_long(telangana)
 long_telangana$date <- parse_date_time(long_telangana$Date.published,orders = c("bdy", "bY"))
 
@@ -3777,7 +3777,7 @@ ggplot(long_telangana, aes(x = party, y = seats, fill = party)) + geom_bar(stat 
 
 ![](Figs/telangana-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_telangana, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Telangana") %>% slice(which.max(average_seats))
 
@@ -3787,7 +3787,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Uttar pardesh
 -------------
 
-``` r
+```r
 up <- read_clean(230,10)
 
 # Look at the data
@@ -4020,7 +4020,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_up <- make_long(up)
 long_up$date <- parse_date_time(long_up$Date.published,orders = c("bdy", "bY"))
 
@@ -4029,7 +4029,7 @@ ggplot(long_up, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/up-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_up, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Uttar Pradesh") %>% slice(which.max(average_seats))
 
@@ -4039,7 +4039,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Uttarakhand
 -----------
 
-``` r
+```r
 uttarakhand <- read_clean(243,2)
 
 # Look at the data
@@ -4103,7 +4103,7 @@ IndiaTV-CNX
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_uttarakhand <- make_long(uttarakhand)
 long_uttarakhand$date <- parse_date_time(long_uttarakhand$Date.published,orders = c("bdy", "bY"))
 
@@ -4112,7 +4112,7 @@ ggplot(long_uttarakhand, aes(x = party, y = seats, fill = party)) + geom_bar(sta
 
 ![](Figs/uttarakhand-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_uttarakhand, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "Uttarakhand") %>% slice(which.max(average_seats))
 
@@ -4122,7 +4122,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 West bengal
 -----------
 
-``` r
+```r
 westbengal <- read_clean(248,4)
 
 # Look at the data
@@ -4250,7 +4250,7 @@ ABPNews-CVoter
 </tr>
 </tbody>
 </table>
-``` r
+```r
 long_westbengal <- make_long(westbengal)
 long_westbengal$date <- parse_date_time(long_westbengal$Date.published,orders = c("bdy", "bY"))
 
@@ -4259,7 +4259,7 @@ ggplot(long_westbengal, aes(x = party, y = seats, fill = party)) + geom_bar(stat
 
 ![](Figs/westbengal-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_westbengal, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise( average_seats = round(mean(seats))) %>% mutate(state = "West Bengal") %>% slice(which.max(average_seats))
 
@@ -4269,7 +4269,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Union territories
 -----------------
 
-``` r
+```r
 ut <- read_clean(255,18)
 ut <- ut[c(1,5,9,13,18),]
 ut$ut <- c("Andaman & Nicobar Island", "Chandigarh","Dadara & Nagar Haveli", "Lakshadweep", "Puducherry")
@@ -4421,7 +4421,8 @@ Puducherry
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_ut <- gather(ut, key = "party", value = "seats", -c(Date.published, Polling.agency,ut, Lead))
 long_ut$seats <- as.integer(long_ut$seats)
 
@@ -4430,7 +4431,7 @@ ggplot(long_ut, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "iden
 
 ![](Figs/ut-1.png)
 
-``` r
+```r
 meanPoll <- data.frame(party = (c("NDA","NDA","NDA","UPA","UPA")), average_seats = c(1,1,1,1,1), state = c("Andaman & Nicobar Island", "Chandigarh", "Dadara & Nagar Havelli", "Lakshadweep", "Puducherry"), stringsAsFactors = F)
 
 meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
@@ -4439,7 +4440,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Delhi
 -----
 
-``` r
+```r
 delhi <- read_clean(276,3)
 
 # Look at the data
@@ -4532,7 +4533,8 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_delhi <- make_long(delhi)
 long_delhi$date <- parse_date_time(long_delhi$Date.published,orders = c("bdy", "bY"))
 
@@ -4541,7 +4543,7 @@ ggplot(long_delhi, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "i
 
 ![](Figs/delhi-1.png)
 
-``` r
+```r
 # Calculate the mean poll for 2019
 meanPoll <- filter(long_delhi, str_detect(Date.published, "2019")) %>% group_by(party) %>% summarise(average_seats = round(mean(seats))) %>% mutate(state = "NCT of Delhi") %>% slice(which.max(average_seats))
 
@@ -4551,7 +4553,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Indian political map according to opinion polls
 ===============================================
 
-``` r
+```r
 india <- rgdal::readOGR("maps/India_map/Admin2.shp")
 ```
 
@@ -4560,7 +4562,7 @@ india <- rgdal::readOGR("maps/India_map/Admin2.shp")
     ## with 36 features
     ## It has 1 fields
 
-``` r
+```r
 state_name_id <- data.frame( id = seq(0,35,1), state = as.character(india$ST_NM))
 
 state_poll_info <- left_join(state_name_id, meanPoll2019, by = "state")
