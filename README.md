@@ -13,7 +13,7 @@ The world's largest election (Indian lok sabha elections 2019) with 879 million 
 Load packages and define the functions
 --------------------------------------
 
-``` r
+```r
 # Load the packages
 library("tidyverse")
 library("kableExtra")
@@ -67,7 +67,7 @@ plot.title=element_text(size=14, face="bold")
 Opinion polling
 ---------------
 
-``` r
+```r
 opinion_poll <- read_clean(1,19)
 
 # Look at the data
@@ -540,7 +540,8 @@ IndiaToday
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_opinion_poll <- opinion_poll %>% select(1,2,3,4,5) %>% gather(key = "party", value = "seats", c(-Date.published, -Polling.agency))
 
 long_opinion_poll$date <- parse_date_time(long_opinion_poll$Date.published,orders = c("bdy", "bY"))
@@ -552,7 +553,7 @@ long_opinion_poll %>% ggplot(aes( x= Polling.agency, y = seats, fill = party)) +
 
 ![](Figs/opinion_poll-1.png)
 
-``` r
+```r
 mean_long_op <- long_opinion_poll %>% group_by(Date.published, party, date) %>% summarise(average_seats = round(mean(seats),0))
 
 # Plot avergae of all opinion polls for the month
@@ -564,7 +565,7 @@ ggplot(mean_long_op, aes(x = reorder(Date.published, date), y = average_seats, f
 Vote share
 ==========
 
-``` r
+```r
 vote_share <- read_clean(24,6)
 
 # Look at the data
@@ -717,7 +718,8 @@ General-election-results
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_vote_share <- vote_share %>% select(1,2,3,4,5) %>% gather(key = "party", value = "vote_share_percent", c(-Date.published, -Polling.agency))
 
 long_vote_share$date <- parse_date_time(long_vote_share$Date.published,orders = c("bdy", "bY"))
