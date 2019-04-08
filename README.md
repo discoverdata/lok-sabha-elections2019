@@ -1578,6 +1578,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_bihar <- make_long(bihar)
 
@@ -1728,6 +1729,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_chhattisgarh <- make_long(chhattisgarh)
 
@@ -1810,6 +1812,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
+
 ```r
 long_goa <- make_long(goa)
 
@@ -1909,6 +1912,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
+
 ```r
 long_gujarat <- make_long(gujarat)
 
@@ -2020,6 +2024,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
+
 ```r
 long_haryana <- make_long(haryana)
 
@@ -2105,6 +2110,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_hp <- make_long(hp)
 
@@ -2204,6 +2210,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
+
 ```r
 long_jk <- make_long(jk)
 
@@ -2295,6 +2302,7 @@ VDPAssociates
 </tr>
 </tbody>
 </table>
+
 ```r
 long_jharkhand <- make_long(jharkhand)
 
@@ -2377,6 +2385,7 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
+
 ```r
 long_karnataka <- make_long(karnataka)
 
@@ -2548,6 +2557,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_kerala <- make_long(kerala)
 
@@ -2715,6 +2725,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_mp <- make_long(mp)
 
@@ -2865,6 +2876,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_maha <- make_long(maha)
 
@@ -3058,6 +3070,7 @@ Tripura
 </tr>
 </tbody>
 </table>
+
 ```r
 long_ne <- gather(ne, key = "party", value = "seats", -c(Date.published, Polling.agency, state, Lead))
 long_ne$seats <- as.integer(long_ne$seats)
@@ -3189,6 +3202,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
+
 ```r
 long_odisha <- make_long(odisha)
 long_odisha$date <- parse_date_time(long_odisha$Date.published,orders = c("bdy", "bY"))
@@ -3341,6 +3355,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
+
 ```r
 long_punjab <- make_long(punjab)
 long_punjab$date <- parse_date_time(long_punjab$Date.published,orders = c("bdy", "bY"))
@@ -3509,6 +3524,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
+
 ```r
 long_rajasthan <- make_long(rajasthan)
 long_rajasthan$date <- parse_date_time(long_rajasthan$Date.published,orders = c("bdy", "bY"))
@@ -3621,6 +3637,7 @@ IndiaTV-CNX
 </tr>
 </tbody>
 </table>
+
 ```r
 long_tn <- make_long(tn)
 long_tn$date <- parse_date_time(long_tn$Date.published,orders = c("bdy", "bY"))
@@ -3768,6 +3785,7 @@ SpickMedia
 </tr>
 </tbody>
 </table>
+
 ```r
 long_telangana <- make_long(telangana)
 long_telangana$date <- parse_date_time(long_telangana$Date.published,orders = c("bdy", "bY"))
@@ -4020,6 +4038,7 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
+
 ```r
 long_up <- make_long(up)
 long_up$date <- parse_date_time(long_up$Date.published,orders = c("bdy", "bY"))
@@ -4103,6 +4122,7 @@ IndiaTV-CNX
 </tr>
 </tbody>
 </table>
+
 ```r
 long_uttarakhand <- make_long(uttarakhand)
 long_uttarakhand$date <- parse_date_time(long_uttarakhand$Date.published,orders = c("bdy", "bY"))
@@ -4250,6 +4270,7 @@ ABPNews-CVoter
 </tr>
 </tbody>
 </table>
+
 ```r
 long_westbengal <- make_long(westbengal)
 long_westbengal$date <- parse_date_time(long_westbengal$Date.published,orders = c("bdy", "bY"))
