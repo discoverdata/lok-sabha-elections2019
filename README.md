@@ -734,7 +734,7 @@ ggplot(data = long_vote_share, mapping = aes(x = Polling.agency, y = vote_share_
 Next PM
 =======
 
-``` r
+```r
 next_pm <- read_clean(33,6)
 
 # Look at the data
@@ -866,7 +866,8 @@ ABPNews-CSDS
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_next_pm <- next_pm %>% select(1,2,3,4,5) %>% gather(key = "person", value = "percent", c(-Date.published, -Polling.agency, -Lead))
 
 long_next_pm$date <- parse_date_time(long_next_pm$Date.published,orders = c("bdy", "bY"))
@@ -881,7 +882,7 @@ Narendra Modi (NM) vs Priyanka Gandhi Vadra (PGV)
 
 Do people want to see a contest between NM and PGV?
 
-``` r
+```r
 nm_pgv <- read_clean(42,1)
 
 # Look at the data
@@ -928,7 +929,8 @@ ABPnews-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_nm_pgv <- nm_pgv %>% select(1,2,3,4,5) %>% gather(key = "response", value = "percent", c(-Date.published, -Polling.agency, -Lead))
 # Remove percent sign
 long_nm_pgv$percent <- as.numeric(gsub("%","",long_nm_pgv$percent))
@@ -943,7 +945,7 @@ pie + blank_theme + geom_text(aes(y = percent/3 + c(0, cumsum(percent)[-length(p
 Economic performance; compared to previous government
 =====================================================
 
-``` r
+```r
 economics <- read_clean(46,3)
 # Look at the data
 kable(economics) %>% kable_styling()
@@ -1035,7 +1037,8 @@ IndiaToday-Karvy
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_economics <-  economics %>% select(1,2,3,4,5) %>% gather(key = "response", value = "percent", c(-Date.published, -Polling.agency))
 long_economics$percent <- as.numeric(gsub("%","",long_economics$percent))
 
@@ -1049,7 +1052,7 @@ ggplot(long_economics, aes(x = "", y = percent, fill = response, group = date)) 
 Key Issues
 ==========
 
-``` r
+```r
 key_issues <- read_clean(52,1)
 # Look at the data
 kable(key_issues) %>% kable_styling()
@@ -1101,7 +1104,8 @@ IndiaToday-Karvy
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_key_issues <-  key_issues %>% select(1:6) %>% gather(key = "issues", value = "percent", c(-Date.published, -Polling.agency))
 
 long_key_issues$date <- parse_date_time(long_key_issues$Date.published,orders = c("bdy", "bY"))
@@ -1114,7 +1118,7 @@ ggplot(long_key_issues, aes(x = issues, y = percent)) + geom_bar(stat = "identit
 Other issues
 ------------
 
-``` r
+```r
 other_issues <- read_clean(56,11)
 other_issues <- other_issues[c(1:3,7,11),]
 
@@ -1246,7 +1250,8 @@ Corruption in Rafale deal
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_other_issues <- other_issues %>% select(1:5,7) %>% gather(key = "response", value = "percent", c(-Date.published, -Polling.agency, -issue))
 
 long_other_issues$date <- parse_date_time(long_other_issues$Date.published,orders = c("bdy", "bY"))
@@ -1262,7 +1267,7 @@ State wise polling
 Andhra Pradesh
 --------------
 
-``` r
+```r
 andhra_pradesh <- read_clean(71,2)
 # Look at the data
 kable(andhra_pradesh) %>% kable_styling()
@@ -1343,7 +1348,8 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_andhra_pradesh <- make_long(andhra_pradesh)
 
 ggplot(long_andhra_pradesh, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge()) + facet_wrap(~Polling.agency) + scale_fill_manual(values=c('#FFA500', '#FFD700', '#228B22', '#008B8B'), name = "Party", labels = c("NDA", "TDP", "UPA","YSRCP")) + labs(x = "", y = "Number of seats") + ggtitle("Andhra Pradesh (25)")
@@ -1351,7 +1357,7 @@ ggplot(long_andhra_pradesh, aes(x = party, y = seats, fill = party)) + geom_bar(
 
 ![](Figs/andhra_pradesh-1.png)
 
-``` r
+```r
 meanPoll2019 <- data.frame(party = character(),
                   average_seats = double(),
                   state = character(), stringsAsFactors = FALSE)
@@ -1365,7 +1371,7 @@ meanPoll2019 <- bind_rows(meanPoll2019, meanPoll)
 Assam
 -----
 
-``` r
+```r
 assam <- read_clean(80,2)
 
 # Look at the data
@@ -1438,7 +1444,8 @@ RepublicTv-Cvoter
 </tr>
 </tbody>
 </table>
-``` r
+
+```r
 long_assam <- make_long(assam)
 
 ggplot(long_assam, aes(x = party, y = seats, fill = party)) + geom_bar(stat = "identity", position = position_dodge(),width = 0.5) + facet_wrap(~Polling.agency) + scale_fill_manual(values = c('#00FF00', '#FFA500', '#228B22'), name = "Party", labels = c("AIUDF","NDA", "UPA")) + labs(x = "", y = "Number of seats") + ggtitle("Assam (14)")
